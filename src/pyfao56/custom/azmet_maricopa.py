@@ -89,7 +89,7 @@ class AzmetMaricopa(Weather):
         self.wndht = 3.00000 #Wind speed measurement height (m)
 
         #Retrieve AZMET weather history for Maricopa
-        print('Retrieving AZMET weather history for Maricopa, AZ...')
+        print('Retrieving AZMET weather history for Hohenheim Stuttgart, GER...')
         today = datetime.datetime.today()
         azmet = []
         for year in range(1987,int(today.strftime('%Y'))+1):
