@@ -1,7 +1,7 @@
 ************************************************************************
 pyfao56: FAO-56 Evapotranspiration in Python
 Weather Data
-Timestamp: 03/18/2024 11:17:59
+Timestamp: 03/18/2024 13:45:22
 ************************************************************************
 Comments:
 ************************************************************************
@@ -12,4 +12,4 @@ Comments:
 
 Daily weather data:
 Year-DOY   Srad   Tmax   Tmin   Vapr   Tdew  RHmax  RHmin  Wndsp   Rain  ETref   MorP
-2024-077  10.29  13.30   4.30    NaN    NaN  98.90  58.80    NaN   0.00    NaN      M
+2024-077  10.29  13.30   4.30    NaN    NaN  98.90  58.80   0.50   0.00    NaN      M
