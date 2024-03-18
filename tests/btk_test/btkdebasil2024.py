@@ -24,31 +24,31 @@ def run():
 
     #Specify the model parameters
     par = fao.Parameters(comment = '2024 Basil')
-    par.Kcbini = 0.15
-    par.Kcbmid = 1.20
-    par.Kcbend = 0.573
+    par.Kcbini = 0.40
+    par.Kcbmid = 1.10
+    par.Kcbend = 1.05
     par.Lini = 15
     par.Ldev = 30
     par.Lmid = 20
     par.Lend = 20
     par.hini = 0.1
-    par.hmax = 0.5
-    par.thetaFC = 0.225
-    par.thetaWP = 0.100
+    par.hmax = 0.8
+    par.thetaFC = 0.14
+    par.thetaWP = 0.060
     par.theta0 = 0.100
-    par.Zrini = 0.60
-    par.Zrmax = 1.70
-    par.pbase = 0.65
-    par.Ze = 0.11429
-    par.REW = 9.0
+    par.Zrini = 0.25
+    par.Zrmax = 0.80
+    par.pbase = 0.40
+    par.Ze = 0.1143
+    par.REW = 8.0
     par.savefile(os.path.join(module_dir,'btkdebasil2024.par'))
     par.loadfile(os.path.join(module_dir,'btkdebasil2024.par'))
 
     #Specify the weather data
     wth = fao.Weather(comment = '2024 basil')
-    wth.loadfile(os.path.join(module_dir,'cotton2013.wth'))
-    wth.savefile(os.path.join(module_dir,'cotton2013.wth'))
-    wth.loadfile(os.path.join(module_dir,'cotton2013.wth'))
+    wth.loadfile(os.path.join(module_dir,'btkdebasil2024'))
+    wth.savefile(os.path.join(module_dir,'btkdebasil2024'))
+    wth.loadfile(os.path.join(module_dir,'btkdebasil2024'))
 
     #Specify the irrigation schedule
     """
@@ -72,16 +72,16 @@ def run():
     """
     irr = fao.Irrigation(comment = '2024 basil')
     irr.addevent(2013, 115, 33.0, 0.5)
-    irr.savefile(os.path.join(module_dir,'cottondry2013.irr'))
-    irr.loadfile(os.path.join(module_dir,'cottondry2013.irr'))
+    irr.savefile(os.path.join(module_dir,'btkdebasil2024.irr'))
+    irr.loadfile(os.path.join(module_dir,'btkdebasil2024.irr'))
 
     #Run the model
     mdl = fao.Model('2013-113','2013-312', par, wth, irr=irr,
                     comment = '2024 basil')
     mdl.run()
     print(mdl)
-    mdl.savefile(os.path.join(module_dir,'cottondry2013.out'))
-    mdl.savesums(os.path.join(module_dir,'cottondry2013.sum'))
+    mdl.savefile(os.path.join(module_dir,'btkdebasil2024.out'))
+    mdl.savesums(os.path.join(module_dir,'btkdebasil2024.sum'))
 
 if __name__ == '__main__':
     run()
