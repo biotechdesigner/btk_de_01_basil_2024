@@ -1,0 +1,15 @@
+************************************************************************
+pyfao56: FAO-56 Evapotranspiration in Python
+Weather Data
+Timestamp: 11/01/2023 11:28:52
+************************************************************************
+Comments:
+************************************************************************
+           S Reference crop - Short ('S') or Tall ('T')
+ 389.0000000 Weather station elevation (z) (m)
+  48.7111700 Weather station latitude (decimal degrees)
+   2.0000000 Wind speed measurement height (m)
+
+Daily weather data:
+Year-DOY   Srad   Tmax   Tmin   Vapr   Tdew  RHmax  RHmin  Wndsp   Rain  ETref   MorP
+2024-077  10.29  13.30   4.30    NaN    NaN  98.90  58.80   0.80   0.00    NaN      M
