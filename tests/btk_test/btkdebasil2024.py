@@ -46,9 +46,9 @@ def run():
 
     #Specify the weather data
     wth = fao.Weather(comment = '2024 basil')
-    wth.loadfile(os.path.join(module_dir,'btkdebasil2024'))
-    wth.savefile(os.path.join(module_dir,'btkdebasil2024'))
-    wth.loadfile(os.path.join(module_dir,'btkdebasil2024'))
+    wth.loadfile(os.path.join(module_dir,'btkdebasil2024.wth'))
+    wth.savefile(os.path.join(module_dir,'btkdebasil2024.wth'))
+    wth.loadfile(os.path.join(module_dir,'btkdebasil2024.wth'))
 
     #Specify the irrigation schedule
     """
@@ -71,7 +71,7 @@ def run():
         Users can override for custom loading of irrigation data.
     """
     irr = fao.Irrigation(comment = '2024 basil')
-    irr.addevent(2013, 115, 33.0, 0.5)
+    irr.addevent(2024, 77, 33.0, 0.3)
     irr.savefile(os.path.join(module_dir,'btkdebasil2024.irr'))
     irr.loadfile(os.path.join(module_dir,'btkdebasil2024.irr'))
 
