@@ -76,7 +76,7 @@ def run():
     irr.loadfile(os.path.join(module_dir,'btkdebasil2024.irr'))
 
     #Run the model
-    mdl = fao.Model('2024-077','2024-077', par, wth, irr=irr,
+    mdl = fao.Model('2024-077','2024-078', par, wth, irr=irr,
                     comment = '2024 basil')
     mdl.run()
     print(mdl)
