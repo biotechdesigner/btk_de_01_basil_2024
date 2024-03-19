@@ -72,12 +72,13 @@ def run():
     """
     irr = fao.Irrigation(comment = '2024 basil')
     irr.addevent(2024, 77, 33.0, 0.3)
+    irr.addevent(2024, 78, 0.513, 0.3)
     irr.savefile(os.path.join(module_dir,'btkdebasil2024.irr'))
     irr.loadfile(os.path.join(module_dir,'btkdebasil2024.irr'))
 
     #Run the model
     mdl = fao.Model('2024-077','2024-078', par, wth, irr=irr,
-                    comment = '2024 basil')
+                    comment = '2024 basil previous test')
     mdl.run()
     print(mdl)
     mdl.savefile(os.path.join(module_dir,'btkdebasil2024.out'))
