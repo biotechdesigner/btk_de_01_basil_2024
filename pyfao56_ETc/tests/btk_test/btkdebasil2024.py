@@ -24,20 +24,20 @@ def run():
 
     #Specify the model parameters
     par = fao.Parameters(comment = '2024 Basil')
-    par.Kcbini = 0.40
-    par.Kcbmid = 1.10
-    par.Kcbend = 1.05
-    par.Lini = 15
-    par.Ldev = 30
-    par.Lmid = 20
-    par.Lend = 20
-    par.hini = 0.1
-    par.hmax = 0.8
-    par.thetaFC = 0.14
-    par.thetaWP = 0.060
-    par.theta0 = 0.100
-    par.Zrini = 0.25
-    par.Zrmax = 0.80
+    par.Kcbini = 0.40 #mint parameters 
+    par.Kcbmid = 1.10 #mint parameters 
+    par.Kcbend = 1.05 #mint parameters 
+    par.Lini = 15 #based on literature for basil plant development
+    par.Ldev = 30 #based on literature for basil plant development
+    par.Lmid = 20 #based on literature for basil plant development
+    par.Lend = 20 #based on literature for basil plant development
+    par.hini = 0.1 #height initial of 1 cm because it started with seeds
+    par.hmax = 0.8 
+    par.thetaFC = 0.14 #Vol. Soil Water Content, Field Capacity (FAO-56, table 19, loamy sand substrat 5)
+    par.thetaWP = 0.060 #Vol. Soil Water Content, Wilting point (FAO-56, table 19, loamy sand substrat 5)
+    par.theta0 = 0.000 #Initial volume soil water content
+    par.Zrini = 0.05 #Initial root depth, 0m because its seeds
+    par.Zrmax = 0.0850 # maximum root depth (m), 8.5 cm because of the pot height
     par.pbase = 0.40
     par.Ze = 0.1143
     par.REW = 8.0
@@ -71,11 +71,12 @@ def run():
         Users can override for custom loading of irrigation data.
     """
     irr = fao.Irrigation(comment = '2024 basil')
+    #irr.addevent(2024, 80, 30, 0.30)
     irr.savefile(os.path.join(module_dir,'btkdebasil2024.irr'))
     irr.loadfile(os.path.join(module_dir,'btkdebasil2024.irr'))
 
     #Run the model
-    mdl = fao.Model('2024-077','2024-086', par, wth, irr=irr, aq_ks=True,
+    mdl = fao.Model('2024-077','2024-092', par, wth, irr=irr, aq_Ks=True,
                     comment = '2024 basil previous test')
     mdl.run()
     print(mdl)
