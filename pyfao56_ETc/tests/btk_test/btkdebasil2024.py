@@ -46,9 +46,9 @@ def run():
 
     #Specify the weather data
     wth = fao.Weather(comment = '2024 basil')
-    wth.loadfile(os.path.join(module_dir,'btkdebasil2024.wth'))
-    wth.savefile(os.path.join(module_dir,'btkdebasil2024.wth'))
-    wth.loadfile(os.path.join(module_dir,'btkdebasil2024.wth'))
+    wth.loadfile(os.path.join(module_dir,'transformed_weather_data.wth'))
+    wth.savefile(os.path.join(module_dir,'transformed_weather_data.wth'))
+    wth.loadfile(os.path.join(module_dir,'transformed_weather_data.wth'))
 
     #Specify the irrigation schedule
     """
