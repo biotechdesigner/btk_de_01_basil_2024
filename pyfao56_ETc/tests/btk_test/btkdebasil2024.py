@@ -71,9 +71,9 @@ def run():
         Users can override for custom loading of irrigation data.
     """
     irr = fao.Irrigation(comment = '2024 basil')
-    #irr.addevent(2024, 80, 30, 0.30)
-    irr.loadfile(os.path.join(module_dir,'btkdebasil2024.irr'))
+    irr.addevent(2024, 108, 0, 1.00)
     irr.savefile(os.path.join(module_dir,'btkdebasil2024.irr'))
+    irr.loadfile(os.path.join(module_dir,'btkdebasil2024.irr'))
    
 
     #Run the model
